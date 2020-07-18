@@ -1,11 +1,13 @@
 package kr.co.tjoeun.pizzastore_20200718.Fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.activity_pizza_store_list_fragment.*
+import kr.co.tjoeun.pizzastore_20200718.OrderActivity
 import kr.co.tjoeun.pizzastore_20200718.R
 import kr.co.tjoeun.pizzastore_20200718.adapters.PizzaAdapters
 import kr.co.tjoeun.pizzastore_20200718.datas.PizzaStore
@@ -36,5 +38,16 @@ class PizzaStoreListFragment : Fragment()
         mBang.add(PizzaStore("미스터피자","010-1244-0000","https://post-phinf.pstatic.net/MjAxODEyMDVfMzYg/MDAxNTQzOTYxOTA4NjM3.8gsStnhxz7eEc9zpt5nmSRZmI-Pzpl4NJvHYU-Dlgmcg.7Vpgk0lopJ5GoTav3CUDqmXi2-_67S5AXD0AGbbR6J4g.JPEG/IMG_1641.jpg?type=w1200"))
         mBang.add(PizzaStore("도미노피자","010-1554-5666","https://pbs.twimg.com/profile_images/1098371010548555776/trCrCTDN_400x400.png"))
         mAdapters.notifyDataSetChanged()
+
+        pizzalistView.setOnItemClickListener { parent, view, position, id ->
+            //어떤방을 선택했는지
+            val clickedRoom = mBang[position]
+
+            //상세 화면으로 진입
+
+            val myIntent = Intent(context, OrderActivity::class.java)
+            myIntent.putExtra("pizza", clickedRoom)
+            startActivity(myIntent)
+        }
     }
 }

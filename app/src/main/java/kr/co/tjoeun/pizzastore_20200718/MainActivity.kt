@@ -26,5 +26,6 @@ class MainActivity : BaseActivity() {
 
     override fun setupEvents() {
 //        TODO("Not yet implemented")
+
     }
 }
