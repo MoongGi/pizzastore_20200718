@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -13,7 +14,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".OrderActivity"></activity>
+        <activity android:name=".EditNickNameActivity"></activity>
+        <activity android:name=".OrderActivity" />
         <activity android:name=".Fragments.MyProfileFragment" />
         <activity android:name=".Fragments.PizzaStoreListFragment" />
         <activity android:name=".MainActivity">

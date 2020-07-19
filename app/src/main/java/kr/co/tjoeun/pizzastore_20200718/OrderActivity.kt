@@ -64,6 +64,12 @@ class OrderActivity : BaseActivity() {
                 .setDeniedMessage("권한을 거부하면 통화 기능을 사용할수 없습니다. 설정에서 허용해 주세요.")
                 .setPermissionListener(permissionListener)
                 .check()
+
+            TedPermission.with(mContext)
+                .setPermissions(Manifest.permission.CAMERA)
+                .setDeniedMessage("권한을 거부하면 카메라 기능을 사용할수 없습니다. 설정에서 허용해 주세요.")
+                .setPermissionListener(permissionListener)
+                .check()
         }
     }
 }
